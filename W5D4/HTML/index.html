@@ -1,4 +1,5 @@
 <html>
+  <a name="bottom" />
   <head>
     <title>Grandma's 3.14 Recipe</title>
     <header>
@@ -13,11 +14,10 @@
     </nav>
 
   </head>
-    <a name="bottom" />
   <body>
     <h1>Apple PI</h1>
       
-    <h2>Best Mathetical Food Everrr</h2>
+    <h2>Best Mathetical Food Ever</h2>
   
     <aside>
       <h3 id="ingredients">Ingredients</h3> 
@@ -66,17 +66,34 @@
       </ol>
       <br>
       <br>
-      <br>
       <section id="reviews">
         <h2>Reviews</h2>
-        <form> 
-          <label>Name:</label>
-          <input type="text" id="name">
-          <label>Rating</label>
-          <input type="radio" id="1" check 
-        
-        </form>
+        <form action="/reviews" method="POST">
+          <label for="name">Name: </label>
+          <input type="text" name="name" id="name" required>
+          
+          <label for="rating">Rating:</label>
+          1<input type="radio" name="rating" value="1" checked> 
+          2<input type="radio" name="rating" value="2"> 
+          3<input type="radio" name="rating" value="3"> 
+          4<input type="radio" name="rating" value="4"> 
+          5<input type="radio" name="rating" value="5">
+          
+          <label for="expertise">Cooking Expertise:</label>
 
+          <select id="expertise" name="expertise">
+            <option value="Select Cooking Expertise" disabled="true" selected="true">Select Cooking Expertise</option>
+             <option value="Somtimes Cook">Sometimes Cook</option>
+             <option value="Cook Everyday">Cook Everyday</option>
+             <option value="Cooking is a Hobby">Cooking is a Hooby</option>
+             <option value="Professional Chef">Professional Chef</option>
+          </select>
+
+          <label>Review
+            <textarea name="review" rows="10" cols="30"></textarea> 
+          </label>
+          <input type="submit" value="Submit Review">
+        </form>
     </section>
 
     <footer>
