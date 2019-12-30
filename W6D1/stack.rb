@@ -1,18 +1,20 @@
 class Stack
+  attr_reader :array
+
   def initialize
-    @stack = []
+    @array = []
   end
 
   def push(el)
-    @stack.push(el)
+    array.push(el)
   end
 
   def pop
-    @stack.pop(el)
+    array.pop(el)
   end
 
   def peek
-    return @stack.last
+    array.last
   end
 
 end
