@@ -6,16 +6,15 @@ class Queue
   end
 
   def enqueue(el)
-    array.push(el)
-    el
+    self.array.push(el)
   end
 
   def dequeue
-    array.shift
+    self.array.shift
   end
 
   def peek
-    array.first
+    self.array.first
   end
 
 end

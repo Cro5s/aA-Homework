@@ -1,39 +1,39 @@
 class Map
-  attr_reader :array
+  attr_reader :hash_map
 
   def initialize
-    @array = []
+    @hash_map = []
   end
   
   def set(key, value)
-    # Checks to see if the key exists as a key of the map
-    pair_index = self.array.index { |pair| pair[0] == key }
-
-    # If it does it assigns the value to that key
-    if pair_index
-      self.array[pair_index][1] = value
+    key_index = self.hash_map.index { |pair| pair[0] == key }
+    if key_index
+      self.hash_map[key_index][1] = value
     else
-      # Otherwise it will make a new key value pair and push it to the end of the array
-      self.array.push([key, value])
+      self.hash_map.push([key, value])
     end
 
     value
   end
-
+  
   def get(key)
-    
+    self.hash_map.each { |pair| return pair[1] if pair[0] == key }
+    nil
   end
-
+  
   def delete(key)
+    value = get(key)
+    self.hash_map.reject! { |pair| pair[0] == key}
 
+    value
   end
-
+  
   def show
-    deep_dup(self.array)
+    self.hash_map
   end
 
-  def deep_dup(arr)
-    arr.map { |el| el.is_a?(Array) ? deep_dup(el) : el }
-  end
+  # def deep_dup(arr)
+  #   arr.hash_map { |el| el.is_a?(Array) ? deep_dup(el) : el }
+  # end
 
 end
