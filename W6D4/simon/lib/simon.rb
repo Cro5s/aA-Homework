@@ -74,4 +74,3 @@ class Simon
     self.seq = []
   end
 end
-
