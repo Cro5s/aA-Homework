@@ -48,4 +48,42 @@ class Play
         id = ?
     SQL
   end
+
+  def self.find_by_title(title)
+    PlayDBConnection.instance.execute(<<-SQL, self.title)
+      SELECT self.title
+      FROM self.plays
+      WHERE self.title = ?    
+    SQL
+  end
+
+  def self.find_by_playwright(name)
+
+  end
+end
+
+class Playwright
+  def self.all
+
+  end
+
+  def self.find_by_name(name)
+
+  end
+
+  def new # this is the initialize method
+
+  end
+
+  def create
+    
+  end
+
+  def update
+
+  end
+
+  def get_plays
+
+  end
 end
